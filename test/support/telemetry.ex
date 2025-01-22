@@ -1,9 +1,12 @@
 defmodule Cluster.Telemetry do
   @moduledoc false
 
+  Application.start(:ex_unit)
+
   use ExUnit.Case
 
   def setup_telemetry(event) do
+
     telemetry_handle_id = "test-telemetry-handler-#{inspect(self())}"
 
     :ok =
